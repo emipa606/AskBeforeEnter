@@ -1,0 +1,4 @@
+# Changelog for AskBeforeEnter
+
+1.3.0 - First publish
+
