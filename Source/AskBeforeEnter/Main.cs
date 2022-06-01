@@ -13,12 +13,39 @@ public static class Main
         new Harmony("Mlie.AskBeforeEnter").PatchAll(Assembly.GetExecutingAssembly());
     }
 
-    public static void AskDialog(IncidentParms parms, IncidentWorker_TraderCaravanArrival incident)
+    public static void AskDialog(IncidentParms parms, IncidentWorker incident)
     {
-        parms.forced = true;
-        Find.WindowStack.Add(new Dialog_MessageBox(
-            "ABE.CaravanArrival".Translate(),
-            "ABE.SendAway".Translate(), null, "ABE.Enter".Translate(),
-            delegate { incident.TryExecute(parms); }));
+        var text = $"ABE.CaravanArrival.{incident.def.defName}".Translate();
+        if (text.RawText.StartsWith("ABE.Cà"))
+        {
+            text = "ABE.CaravanArrival.TraderCaravanArrival".Translate();
+        }
+
+        var diaNode = new DiaNode(text);
+        var optionSendAway = new DiaOption("ABE.SendAway".Translate()) { action = null, resolveTree = true };
+        diaNode.options.Add(optionSendAway);
+
+        var optionLater = new DiaOption("ABE.Later".Translate())
+        {
+            action = () =>
+                Find.Storyteller.incidentQueue.Add(incident.def,
+                    Find.TickManager.TicksGame + (GenDate.TicksPerHour * 6), parms),
+            resolveTree = true
+        };
+        diaNode.options.Add(optionLater);
+
+        var optionEnter = new DiaOption("ABE.Enter".Translate())
+        {
+            action = () =>
+            {
+                parms.forced = true;
+                incident.TryExecute(parms);
+            },
+            resolveTree = true
+        };
+        diaNode.options.Add(optionEnter);
+
+        string title = "ABE.CaravanTitle".Translate();
+        Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, true, title));
     }
 }

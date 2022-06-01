@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <ABE.CaravanArrival>A trade caravan is approching.
-Do you want them to enter the map or do you want to send them away?</ABE.CaravanArrival>
+  <ABE.CaravanTitle>Caravan approches</ABE.CaravanTitle>
+  <ABE.CaravanArrival.TraderCaravanArrival>A trade caravan is approching.
+You cannot see what faction they are but you can signal to them.
+Do you want so signal them to go away, come back later or let them enter?
+</ABE.CaravanArrival.TraderCaravanArrival>
+  <ABE.CaravanArrival.CaravanArrivalTributeCollector>A trade caravan is approching.
+They seem to be an Empire tribute collector.
+Do you want so signal them to go away, come back later or let them enter?
+</ABE.CaravanArrival.CaravanArrivalTributeCollector>
   <ABE.SendAway>Send them away</ABE.SendAway>
   <ABE.Enter>Allow them to enter</ABE.Enter>
+  <ABE.Later>Come back later</ABE.Later>
 </LanguageData>
