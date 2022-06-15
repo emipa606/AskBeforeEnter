@@ -6,6 +6,7 @@
 Sometimes that trader caravan enters just at the wrong time, triggering the dormant mech cluster leading to the premature destruction of your base. 
 
 This mod shows a message as a trade caravan approches where you can tell them to not enter.
+You can also tell them to come back later, they will then return in about 6 hours.
 
 ![Image](https://i.imgur.com/O0IIlYj.png)
 

@@ -8,7 +8,10 @@ public static class IncidentWorker_TraderCaravanArrival_TryExecuteWorker
 {
     public static bool Prefix(IncidentParms parms, IncidentWorker_TraderCaravanArrival __instance)
     {
-        if (parms.forced)
+        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Traders && (
+                !AskBeforeEnterMod.instance.AskBeforeEnterSettings.TributeCollector ||
+                __instance.def.defName != "CaravanArrivalTributeCollector") ||
+            parms.forced)
         {
             return true;
         }

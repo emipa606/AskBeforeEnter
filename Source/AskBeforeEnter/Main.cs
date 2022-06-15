@@ -15,24 +15,26 @@ public static class Main
 
     public static void AskDialog(IncidentParms parms, IncidentWorker incident)
     {
-        var text = $"ABE.CaravanArrival.{incident.def.defName}".Translate();
-        if (text.RawText.StartsWith("ABE.Cà"))
+        var text = $"ABE.{incident.def.defName}".Translate();
+        if (text.RawText.StartsWith("ABE."))
         {
-            text = "ABE.CaravanArrival.TraderCaravanArrival".Translate();
+            text = "ABE.GenericGroup".Translate();
         }
 
         var diaNode = new DiaNode(text);
         var optionSendAway = new DiaOption("ABE.SendAway".Translate()) { action = null, resolveTree = true };
         diaNode.options.Add(optionSendAway);
-
-        var optionLater = new DiaOption("ABE.Later".Translate())
+        if (incident.def.defName != "TravelerGroup")
         {
-            action = () =>
-                Find.Storyteller.incidentQueue.Add(incident.def,
-                    Find.TickManager.TicksGame + (GenDate.TicksPerHour * 6), parms),
-            resolveTree = true
-        };
-        diaNode.options.Add(optionLater);
+            var optionLater = new DiaOption("ABE.Later".Translate())
+            {
+                action = () =>
+                    Find.Storyteller.incidentQueue.Add(incident.def,
+                        Find.TickManager.TicksGame + (GenDate.TicksPerHour * 6), parms),
+                resolveTree = true
+            };
+            diaNode.options.Add(optionLater);
+        }
 
         var optionEnter = new DiaOption("ABE.Enter".Translate())
         {
@@ -45,7 +47,7 @@ public static class Main
         };
         diaNode.options.Add(optionEnter);
 
-        string title = "ABE.CaravanTitle".Translate();
+        string title = "ABE.Approching".Translate();
         Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, true, title));
     }
 }
