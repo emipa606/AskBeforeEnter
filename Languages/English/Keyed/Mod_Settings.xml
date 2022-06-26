@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <ABE.Approching>A group is approching</ABE.Approching>
+  <ABE.Approching>A group is approaching</ABE.Approching>
   <ABE.Hospitality>The Hospitalty-mod is loaded. It overrides the visitors-event so this mod will not ask for visitor-groups.</ABE.Hospitality>
-  <ABE.GenericGroup>A group of pawns are approching.
+  <ABE.GenericGroup>A group of pawns are approaching.
 You cannot see what faction they are but you can signal to them.
 Do you want so signal them to go away, come back later or let them enter?
 </ABE.GenericGroup>
-  <ABE.TraderCaravanArrival>A trade caravan is approching.
+  <ABE.TraderCaravanArrival>A trade caravan is approaching.
 You cannot see what faction they are but you can signal to them.
 Do you want so signal them to go away, come back later or let them enter?
 </ABE.TraderCaravanArrival>
-  <ABE.CaravanArrivalTributeCollector>A trade caravan is approching.
+  <ABE.CaravanArrivalTributeCollector>A trade caravan is approaching.
 They seem to be an Empire tribute collector.
 Do you want so signal them to go away, come back later or let them enter?
 </ABE.CaravanArrivalTributeCollector>
-  <ABE.TravelerGroup>A group of travelers are approching.
+  <ABE.TravelerGroup>A group of travelers are approaching.
 Do you want to signal to them to choose another way or can they pass through your area?
 </ABE.TravelerGroup>
-  <ABE.TravelerGroup>A group of visitors are approching.
+  <ABE.TravelerGroup>A group of visitors are approaching.
 Do you want so signal them to go away, come back later or let them enter?
 </ABE.TravelerGroup>
   <ABE.SendAway>Send them away</ABE.SendAway>

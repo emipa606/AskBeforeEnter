@@ -24,6 +24,11 @@ Sometimes that trader caravan enters just at the wrong time, triggering the dorm
 
 This mod shows a message as a trade caravan approches where you can tell them to not enter.
 You can also tell them to come back later, they will then return in about 6 hours.
+This also triggers for visitor-groups and travelers passing through your map.
+
+You can select what groups to trigger for in the mod-options.
+
+Works well as a companion mod for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2824117092]Enter Here[/url]
 
 [table]
     [tr]
