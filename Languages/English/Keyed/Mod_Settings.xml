@@ -17,10 +17,11 @@ Do you want so signal them to go away, come back later or let them enter?
   <ABE.TravelerGroup>A group of travelers are approaching.
 Do you want to signal to them to choose another way or can they pass through your area?
 </ABE.TravelerGroup>
-  <ABE.TravelerGroup>A group of visitors are approaching.
+  <ABE.VisitorGroup>A group of visitors are approaching.
 Do you want so signal them to go away, come back later or let them enter?
-</ABE.TravelerGroup>
+</ABE.VisitorGroup>
   <ABE.SendAway>Send them away</ABE.SendAway>
+  <ABE.ModVersion>Installed mod-version: {0}</ABE.ModVersion>
   <ABE.Enter>Allow them to enter</ABE.Enter>
   <ABE.Later>Come back later</ABE.Later>
   <ABE.Title>Select what types of visitors should ask before entering</ABE.Title>

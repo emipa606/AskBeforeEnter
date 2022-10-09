@@ -47,7 +47,6 @@ public static class Main
         };
         diaNode.options.Add(optionEnter);
 
-        string title = "ABE.Approching".Translate();
-        Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, true, title));
+        Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, true, "ABE.Approching".Translate()));
     }
 }

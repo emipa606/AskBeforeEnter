@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Mlie;
+using UnityEngine;
 using Verse;
 
 namespace AskBeforeEnter;
@@ -10,6 +11,8 @@ internal class AskBeforeEnterMod : Mod
     ///     The instance of the askBeforeEnterSettings to be read by the mod
     /// </summary>
     public static AskBeforeEnterMod instance;
+
+    private static string currentVersion;
 
     /// <summary>
     ///     The private askBeforeEnterSettings
@@ -23,6 +26,8 @@ internal class AskBeforeEnterMod : Mod
     public AskBeforeEnterMod(ModContentPack content) : base(content)
     {
         instance = this;
+        currentVersion =
+            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.AskBeforeEnter"));
     }
 
     /// <summary>
@@ -81,6 +86,14 @@ internal class AskBeforeEnterMod : Mod
         {
             listing_Standard.Gap();
             listing_Standard.Label("ABE.Hospitality".Translate());
+        }
+
+        if (currentVersion != null)
+        {
+            listing_Standard.Gap();
+            GUI.contentColor = Color.gray;
+            listing_Standard.Label("ABE.ModVersion".Translate(currentVersion));
+            GUI.contentColor = Color.white;
         }
 
         listing_Standard.End();
