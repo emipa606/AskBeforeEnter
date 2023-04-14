@@ -17,7 +17,7 @@ internal class AskBeforeEnterMod : Mod
     /// <summary>
     ///     The private askBeforeEnterSettings
     /// </summary>
-    private AskBeforeEnterSettings askBeforeEnterSettings;
+    public readonly AskBeforeEnterSettings AskBeforeEnterSettings;
 
     /// <summary>
     ///     Constructor
@@ -27,25 +27,10 @@ internal class AskBeforeEnterMod : Mod
     {
         instance = this;
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.AskBeforeEnter"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
+        AskBeforeEnterSettings = GetSettings<AskBeforeEnterSettings>();
     }
 
-    /// <summary>
-    ///     The instance-askBeforeEnterSettings for the mod
-    /// </summary>
-    internal AskBeforeEnterSettings AskBeforeEnterSettings
-    {
-        get
-        {
-            if (askBeforeEnterSettings == null)
-            {
-                askBeforeEnterSettings = GetSettings<AskBeforeEnterSettings>();
-            }
-
-            return askBeforeEnterSettings;
-        }
-        set => askBeforeEnterSettings = value;
-    }
 
     /// <summary>
     ///     The title for the mod-askBeforeEnterSettings

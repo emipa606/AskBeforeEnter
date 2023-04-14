@@ -22,7 +22,11 @@ public static class Main
         }
 
         var diaNode = new DiaNode(text);
-        var optionSendAway = new DiaOption("ABE.SendAway".Translate()) { action = null, resolveTree = true };
+        var optionSendAway = new DiaOption("ABE.SendAway".Translate())
+        {
+            action = () => Current.Game.GetComponent<GameComponent_RefusalTracker>().guestsRefused++,
+            resolveTree = true
+        };
         diaNode.options.Add(optionSendAway);
         if (incident.def.defName != "TravelerGroup")
         {

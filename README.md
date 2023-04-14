@@ -1,6 +1,6 @@
 # AskBeforeEnter
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://i.imgur.com/iCj5o7O.png)
 
 
 Sometimes that trader caravan enters just at the wrong time, triggering the dormant mech cluster leading to the premature destruction of your base. 
@@ -13,14 +13,14 @@ You can select what groups to trigger for in the mod-options.
 
 Works well as a companion mod for https://steamcommunity.com/sharedfiles/filedetails/?id=2824117092]Enter Here
 
-![Image](https://i.imgur.com/O0IIlYj.png)
+![Image](https://i.imgur.com/Ds0rBAD.png)
 
 Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my https://store.steampowered.com/wishlist/id/Mlie]Wishlist or buy me a cup of tea.
 
-https://ko-fi.com/G2G55DDYD]![Image](https://i.imgur.com/Utx6OIH.png)
+https://ko-fi.com/G2G55DDYD]![Image](https://i.imgur.com/VWG0yff.png)
 
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://i.imgur.com/5xwDG6H.png)
 
 
 
@@ -33,3 +33,4 @@ https://ko-fi.com/G2G55DDYD]![Image](https://i.imgur.com/Utx6OIH.png)
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2813027453]Last updated 2023-04-14
