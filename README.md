@@ -13,6 +13,9 @@ You can select what groups to trigger for in the mod-options.
 
 Works well as a companion mod for https://steamcommunity.com/sharedfiles/filedetails/?id=2824117092]Enter Here
 
+https://steamcommunity.com/sharedfiles/filedetails/?id=2288125657]![Image](https://i.imgur.com/kNldlMg.png)
+
+
 ![Image](https://i.imgur.com/Ds0rBAD.png)
 
 Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my https://store.steampowered.com/wishlist/id/Mlie]Wishlist or buy me a cup of tea.
@@ -32,5 +35,4 @@ https://ko-fi.com/G2G55DDYD]![Image](https://i.imgur.com/VWG0yff.png)
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2813027453]Last updated 2023-04-14
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2813027453]Last updated 2023-05-01
