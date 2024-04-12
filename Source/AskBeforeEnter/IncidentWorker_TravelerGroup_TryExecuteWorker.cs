@@ -8,10 +8,16 @@ public static class IncidentWorker_TravelerGroup_TryExecuteWorker
 {
     public static bool Prefix(IncidentParms parms, IncidentWorker_TravelerGroup __instance)
     {
-        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Travelers || parms.forced)
+        if (parms.forced)
         {
             return true;
         }
+
+        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Travelers)
+        {
+            return true;
+        }
+
 
         Main.AskDialog(parms, __instance);
 

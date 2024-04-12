@@ -8,10 +8,18 @@ public static class IncidentWorker_TraderCaravanArrival_TryExecuteWorker
 {
     public static bool Prefix(IncidentParms parms, IncidentWorker_TraderCaravanArrival __instance)
     {
-        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Traders && (
-                !AskBeforeEnterMod.instance.AskBeforeEnterSettings.TributeCollector ||
-                __instance.def.defName != "CaravanArrivalTributeCollector") ||
-            parms.forced)
+        if (parms.forced)
+        {
+            return true;
+        }
+
+        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.TributeCollector &&
+            __instance.def.defName == "CaravanArrivalTributeCollector")
+        {
+            return true;
+        }
+
+        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Traders)
         {
             return true;
         }
