@@ -13,7 +13,7 @@ public static class IncidentWorker_TravelerGroup_TryExecuteWorker
             return true;
         }
 
-        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Travelers)
+        if (!AskBeforeEnterMod.Instance.AskBeforeEnterSettings.Travelers)
         {
             return true;
         }

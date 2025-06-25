@@ -13,7 +13,7 @@ public static class IncidentWorker_VisitorGroup_TryExecuteWorker
             return true;
         }
 
-        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Visitors)
+        if (!AskBeforeEnterMod.Instance.AskBeforeEnterSettings.Visitors)
         {
             return true;
         }

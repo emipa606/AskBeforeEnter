@@ -10,7 +10,7 @@ internal class AskBeforeEnterMod : Mod
     /// <summary>
     ///     The instance of the askBeforeEnterSettings to be read by the mod
     /// </summary>
-    public static AskBeforeEnterMod instance;
+    public static AskBeforeEnterMod Instance;
 
     private static string currentVersion;
 
@@ -25,7 +25,7 @@ internal class AskBeforeEnterMod : Mod
     /// <param name="content"></param>
     public AskBeforeEnterMod(ModContentPack content) : base(content)
     {
-        instance = this;
+        Instance = this;
         currentVersion =
             VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
         AskBeforeEnterSettings = GetSettings<AskBeforeEnterSettings>();
@@ -48,40 +48,40 @@ internal class AskBeforeEnterMod : Mod
     /// <param name="rect"></param>
     public override void DoSettingsWindowContents(Rect rect)
     {
-        var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(rect);
-        listing_Standard.Gap();
-        listing_Standard.Label("ABE.Title".Translate());
-        listing_Standard.CheckboxLabeled("ABE.Traders".Translate(), ref AskBeforeEnterSettings.Traders,
+        var listingStandard = new Listing_Standard();
+        listingStandard.Begin(rect);
+        listingStandard.Gap();
+        listingStandard.Label("ABE.Title".Translate());
+        listingStandard.CheckboxLabeled("ABE.Traders".Translate(), ref AskBeforeEnterSettings.Traders,
             "ABE.Traders.Tooltip".Translate());
         if (ModLister.RoyaltyInstalled)
         {
-            listing_Standard.CheckboxLabeled("ABE.TributeCollector".Translate(),
+            listingStandard.CheckboxLabeled("ABE.TributeCollector".Translate(),
                 ref AskBeforeEnterSettings.TributeCollector, "ABE.TributeCollector.Tooltip".Translate());
         }
 
-        listing_Standard.CheckboxLabeled("ABE.Travelers".Translate(), ref AskBeforeEnterSettings.Travelers,
+        listingStandard.CheckboxLabeled("ABE.Travelers".Translate(), ref AskBeforeEnterSettings.Travelers,
             "ABE.Travelers.Tooltip".Translate());
-        if (ModLister.GetActiveModWithIdentifier("Orion.Hospitality") == null)
+        if (ModLister.GetActiveModWithIdentifier("Orion.Hospitality", true) == null)
         {
-            listing_Standard.CheckboxLabeled("ABE.Visitors".Translate(), ref AskBeforeEnterSettings.Visitors,
+            listingStandard.CheckboxLabeled("ABE.Visitors".Translate(), ref AskBeforeEnterSettings.Visitors,
                 "ABE.Visitors.Tooltip".Translate());
         }
         else
         {
-            listing_Standard.Gap();
-            listing_Standard.Label("ABE.Hospitality".Translate());
+            listingStandard.Gap();
+            listingStandard.Label("ABE.Hospitality".Translate());
         }
 
         if (currentVersion != null)
         {
-            listing_Standard.Gap();
+            listingStandard.Gap();
             GUI.contentColor = Color.gray;
-            listing_Standard.Label("ABE.ModVersion".Translate(currentVersion));
+            listingStandard.Label("ABE.ModVersion".Translate(currentVersion));
             GUI.contentColor = Color.white;
         }
 
-        listing_Standard.End();
+        listingStandard.End();
         AskBeforeEnterSettings.Write();
     }
 }

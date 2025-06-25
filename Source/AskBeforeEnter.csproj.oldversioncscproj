@@ -1,16 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputPath>..\..\1.4\Assemblies</OutputPath>
+    <OutputPath>..\..\1.5\Assemblies</OutputPath>
     <TargetFramework>net48</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DebugType>None</DebugType>
     <LangVersion>latest</LangVersion>
-    <FileVersion>1.4.4</FileVersion>
+    <FileVersion>1.5.1</FileVersion>
   </PropertyGroup>
-  <Target Name="DeleteFiles" AfterTargets="Build">
-    <Delete Files="$(OutDir)0Harmony.dll" />
-  </Target>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
       <Version>*</Version>
@@ -22,8 +19,5 @@
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Mlie_Rimworld_VersionFromManifest" Version="*" />
-    <PackageReference Include="AchievementsExpanded">
-      <Version>1.4.82</Version>
-    </PackageReference>
   </ItemGroup>
 </Project>

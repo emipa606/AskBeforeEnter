@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="AchievementsExpanded/AchievementsExpanded_AskBeforeEnter.csproj" />
+  <Project Path="AskBeforeEnter/AskBeforeEnter.csproj" />
+</Solution>

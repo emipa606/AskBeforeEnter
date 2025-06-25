@@ -13,13 +13,13 @@ public static class IncidentWorker_TraderCaravanArrival_TryExecuteWorker
             return true;
         }
 
-        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.TributeCollector &&
+        if (!AskBeforeEnterMod.Instance.AskBeforeEnterSettings.TributeCollector &&
             __instance.def.defName == "CaravanArrivalTributeCollector")
         {
             return true;
         }
 
-        if (!AskBeforeEnterMod.instance.AskBeforeEnterSettings.Traders)
+        if (!AskBeforeEnterMod.Instance.AskBeforeEnterSettings.Traders)
         {
             return true;
         }

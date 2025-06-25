@@ -1,5 +1,8 @@
 # Changelog for AskBeforeEnter
 
+1.6.0 - Mod updated for 1.6 and passed autotests
+
+
 1.5.1 - Fixed the custom tracker for the 1.5 release of Vanilla Achievements Expanded
 
 

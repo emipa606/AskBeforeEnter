@@ -6,9 +6,9 @@ namespace AskBeforeEnter;
 
 public class RefusalTracker : TrackerBase
 {
-    public int count = 1;
+    private int count = 1;
 
-    [Unsaved] protected int triggeredCount; //Only for display
+    [Unsaved] private int triggeredCount; //Only for display
 
     public RefusalTracker()
     {
@@ -19,11 +19,7 @@ public class RefusalTracker : TrackerBase
         count = reference.count;
     }
 
-    public override string Key
-    {
-        get => "RefusalCurrentTracker";
-        set { }
-    }
+    public override string Key => "RefusalCurrentTracker";
 
     public override Func<bool> AttachToLongTick => Trigger;
 
