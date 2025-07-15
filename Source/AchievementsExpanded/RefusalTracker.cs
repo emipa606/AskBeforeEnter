@@ -19,7 +19,11 @@ public class RefusalTracker : TrackerBase
         count = reference.count;
     }
 
-    public override string Key => "RefusalCurrentTracker";
+    public override string Key
+    {
+        get => "RefusalCurrentTracker";
+        set { }
+    }
 
     public override Func<bool> AttachToLongTick => Trigger;
 

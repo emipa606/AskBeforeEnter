@@ -3,10 +3,16 @@
   "CanAdd": "0",
   "CanRemove": "0",
   "PreviewVersion": "1.6",
-  "LastXmlCleaning": "2025-06-25T20:44:02.0770435+02:00",
+  "LastXmlCleaning": "2025-07-15T21:49:21.4423957+02:00",
   "SocialImageSet": true,
   "FundingSet": true,
   "SearchTags": [
     "quality of life"
-  ]
+  ],
+  "Patches": false,
+  "Defs": false,
+  "Assemblies": true,
+  "LinesOfCode": 14250,
+  "LinesOfXML": 0,
+  "CodeBaseSize": 65
 }
