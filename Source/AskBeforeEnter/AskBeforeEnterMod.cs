@@ -60,6 +60,8 @@ internal class AskBeforeEnterMod : Mod
                 ref AskBeforeEnterSettings.TributeCollector, "ABE.TributeCollector.Tooltip".Translate());
         }
 
+        listingStandard.CheckboxLabeled("ABE.Allies".Translate(), ref AskBeforeEnterSettings.Allies,
+            "ABE.Allies.Tooltip".Translate());
         listingStandard.CheckboxLabeled("ABE.Travelers".Translate(), ref AskBeforeEnterSettings.Travelers,
             "ABE.Travelers.Tooltip".Translate());
         if (ModLister.GetActiveModWithIdentifier("Orion.Hospitality", true) == null)

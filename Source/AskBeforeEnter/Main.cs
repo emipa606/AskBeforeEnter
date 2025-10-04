@@ -28,7 +28,7 @@ public static class Main
             resolveTree = true
         };
         diaNode.options.Add(optionSendAway);
-        if (incident.def.defName != "TravelerGroup")
+        if (incident.def.defName != "TravelerGroup" && incident.def.defName != "RaidFriendly")
         {
             var optionLater = new DiaOption("ABE.Later".Translate())
             {

@@ -1,48 +1,43 @@
-# GitHub Copilot Instructions for RimWorld Modding Project
+# GitHub Copilot Instructions for Ask Before Enter Mod
+
+Welcome to the "Ask Before Enter" RimWorld mod development guidance. This document aims to provide comprehensive instructions, coding patterns, conventions, and suggestions for using GitHub Copilot in your modding project. This guide will help streamline the development process of the "Ask Before Enter" mod and enhance its integration with RimWorld's systems.
 
 ## Mod Overview and Purpose
 
-This RimWorld mod aims to enhance the player's experience by introducing an achievements system alongside configurable mod settings for visitor interactions. This mod caters to players who enjoy progression systems and enhanced control over interactions with different factions and groups visiting their colony.
+**Mod Name**: Ask Before Enter
 
-## Key Features and Systems
+**Purpose**: The "Ask Before Enter" mod allows players to prevent unwanted visitor groups, trade caravans, or travelers from entering their colony at inopportune times. It achieves this by providing a notification and options for visitors to wait or return later, thus averting potential threats, such as automatic triggering of dormant mech clusters.
 
-- **Achievements System**: Introduced through the `AchievementsExpanded` framework, allowing players to unlock various achievements as they accomplish specific tasks in-game. The mod integrates trackers to monitor specific actions and trigger achievements.
-  
-  - **RefusalTracker**: A tracker that monitors refusals of incidents to log and potentially unlock achievements.
-  - **GameComponent_RefusalTracker**: A game component that manages the refusal events and aggregates data for the achievement system.
+### Key Features and Systems
 
-- **Visitor Interaction Settings**: Managed by the `AskBeforeEnter` feature, providing players with settings to configure responses to incoming groups, such as trader caravans and visitors.
+1. **Visitor Management**: Offers control over incoming groups with options to delay their entrance or request their temporary departure.
+2. **Notifications**: Alerts players when a caravan or visitor group is approaching, enabling timely decision-making.
+3. **Mod Options**: Customizable settings to select which groups the notification and control should apply to.
+4. **Harmony Patching**: Subtle integration into the game’s incident and group handling systems using the Harmony library for seamless gameplay experiences.
 
-## Coding Patterns and Conventions
+### Coding Patterns and Conventions
 
-- **Naming Conventions**: Classes and methods are named using PascalCase, consistent with C# conventions. Internal settings classes are prefixed with `AskBeforeEnter`, indicating their module affiliation.
+- **Naming Conventions**: Follow C# standard conventions, using PascalCase for classes and methods, and camelCase for local variables.
+- **Class Design**: Separate class responsibilities clearly, such as `GameComponent_RefusalTracker` for tracking refusal states and `AskBeforeEnterMod` for mod initialization.
+- **Method Usage**: Focus on single responsibility in methods; methods within `IncidentWorker_*_TryExecuteWorker` handling the decision-making logic for visitor events.
 
-- **Class Organization**: 
-  - Use of `public`, `internal`, and `static` modifiers appropriately to indicate the intended access level and utility.
-  - Classes like `AskBeforeEnterSettings` are marked `internal` to restrict their visibility to the enclosing assembly.
+### XML Integration
 
-- **Method Implementation**: Though method implementations are not explicitly detailed in this mod overview, Copilot can suggest boilerplate code for methods based on usage patterns from similar scenarios.
+- Use XML for defining mod settings and configuration details, linking them with `AskBeforeEnterSettings`.
+- Make use of XML-definitions for easy alterations of mod configurations.
 
-## XML Integration
+### Harmony Patching
 
-- **Mod Settings Serialization**: The `AskBeforeEnterSettings` class leverages RimWorld's XML-based serialization system to store and retrieve settings. XML files define player-configurable parameters which the game loads at runtime.
+- Apply Harmony patches to incident worker classes like `IncidentWorker_TraderCaravanArrival_TryExecuteWorker`, `IncidentWorker_TravelerGroup_TryExecuteWorker`, and `IncidentWorker_VisitorGroup_TryExecuteWorker` to modify how these incidents trigger visitor arrival events.
+- Ensure that patches are applied and removed correctly to prevent conflicts with other mods and maintain the game's stability.
 
-## Harmony Patching
+### Suggestions for Copilot
 
-- **Harmony** is used for runtime method replacement and modification. This mod likely employs Harmony patches in classes such as `IncidentWorker_TraderCaravanArrival_TryExecuteWorker`, `IncidentWorker_TravelerGroup_TryExecuteWorker`, and `IncidentWorker_VisitorGroup_TryExecuteWorker` to intercept and modify behavior when visitors approach.
+When using GitHub Copilot for the "Ask Before Enter" mod, consider the following suggestions:
 
-## Suggestions for Copilot
+1. **Boilerplate Code**: Utilize Copilot for generating repetitive boilerplate code, especially when creating new classes or methods that adhere to existing patterns.
+2. **Harmony Integration**: Allow Copilot to assist in writing Harmony patch attributes and look for patterns in patching methods.
+3. **XML Handling**: Leverage Copilot's understanding to write and manage XML configuration files efficiently.
+4. **Mod Options Integration**: Use Copilot to suggest code for interacting with modular parts of RimWorld's settings and integrate mod options smoothly.
 
-Given the context of this mod, here are tailored suggestions for using GitHub Copilot to aid development:
-
-1. **Method Stubs**: Use Copilot to auto-generate method stubs within classes, particularly for tracker logic and mod initialization in `Main.cs`.
-
-2. **Harmony Patch Templates**: You can prompt Copilot to suggest templates for common Harmony patch types, such as Prefix and Postfix, to intercept method calls in incident workers.
-
-3. **XML Parsing Code**: Copilot can provide boilerplate code for reading and writing XML settings, crucial for expanding `AskBeforeEnterSettings`.
-
-4. **Code Refactoring Suggestions**: Utilize Copilot to identify opportunities to refactor existing classes into smaller, more maintainable units – for example, by splitting responsibilities within the game components.
-
-5. **Error Handling Patterns**: Copilot can help implement consistent error handling patterns across mod components to enhance robustness.
-
-By instructing GitHub Copilot with these guidelines, you can streamline mod development while adhering to best practices and enhancing the mod's functionality.
+By following the above instructions and utilizing GitHub Copilot effectively, you can enhance the development workflow of the "Ask Before Enter" RimWorld mod. These structured guidelines will help maintain code consistency and integrate the mod efficiently with the game's existing mechanics.

@@ -7,6 +7,7 @@ namespace AskBeforeEnter;
 /// </summary>
 internal class AskBeforeEnterSettings : ModSettings
 {
+    public bool Allies;
     public bool Traders = true;
     public bool Travelers = true;
     public bool TributeCollector = true;
@@ -18,6 +19,7 @@ internal class AskBeforeEnterSettings : ModSettings
     public override void ExposeData()
     {
         base.ExposeData();
+        Scribe_Values.Look(ref Allies, "Allies");
         Scribe_Values.Look(ref Traders, "Traders", true);
         Scribe_Values.Look(ref TributeCollector, "TributeCollector", true);
         Scribe_Values.Look(ref Visitors, "Visitors", true);
